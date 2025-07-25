@@ -7,6 +7,12 @@
 
 A modern, feature-rich text-to-speech web application built with React and TypeScript. VoiceFlow provides an intuitive interface for converting text to natural-sounding speech with real-time word highlighting, customizable voice settings, and content management capabilities.
 
+## 📸 Screenshots
+
+![VoiceFlow Application Interface](https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png)
+
+*VoiceFlow's intuitive interface featuring real-time word highlighting, customizable voice controls, and content management.*
+
 ## ✨ Features
 
 ### 🎵 Core Functionality
