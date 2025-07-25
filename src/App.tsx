@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, Pause, Square, Plus, Edit2, Trash2, Volume2, Settings, ChevronDown } from 'lucide-react';
+import { Play, Pause, Square, Plus, Edit2, Trash2, Volume2, Settings, ChevronDown, Github, Star, Heart, MessageCircle, ExternalLink } from 'lucide-react';
 
 interface TextContent {
   id: string;
@@ -35,6 +35,7 @@ function App() {
   const [showAddForm, setShowAddForm] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [editingContent, setEditingContent] = useState<string | null>(null);
+  const [showGitHubPrompt, setShowGitHubPrompt] = useState(true);
   
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [speechSettings, setSpeechSettings] = useState<SpeechSettings>({
@@ -184,6 +185,15 @@ function App() {
             </h1>
           </div>
           <div className="flex items-center space-x-3">
+            <a
+              href="https://github.com/yuis-ice/text-to-speech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors group"
+              title="View on GitHub"
+            >
+              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
             <button
               onClick={() => setShowSettings(!showSettings)}
               className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
@@ -245,6 +255,55 @@ function App() {
                   </p>
                 </div>
               ))}
+            </div>
+            
+            {/* GitHub Engagement Card */}
+            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg p-4 border border-gray-700">
+              <div className="flex items-center space-x-2 mb-3">
+                <Github className="w-5 h-5 text-blue-400" />
+                <h3 className="font-semibold text-gray-200">Open Source</h3>
+              </div>
+              <p className="text-sm text-gray-400 mb-4">
+                Help improve VoiceFlow by contributing to our open source project!
+              </p>
+              <div className="space-y-2">
+                <a
+                  href="https://github.com/yuis-ice/text-to-speech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-2 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors group"
+                >
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    <span>Star Repository</span>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="https://github.com/yuis-ice/text-to-speech/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-2 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors group"
+                >
+                  <div className="flex items-center space-x-2">
+                    <MessageCircle className="w-4 h-4 text-green-400" />
+                    <span>Report Issues</span>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+                <a
+                  href="https://github.com/yuis-ice/text-to-speech/blob/main/CONTRIBUTING.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-2 bg-gray-700 hover:bg-gray-600 rounded text-sm transition-colors group"
+                >
+                  <div className="flex items-center space-x-2">
+                    <Heart className="w-4 h-4 text-red-400" />
+                    <span>Contribute</span>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -370,6 +429,47 @@ function App() {
           </div>
         </div>
 
+        {/* GitHub Promotion Banner */}
+        {showGitHubPrompt && (
+          <div className="fixed bottom-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-4 shadow-lg max-w-sm z-40 border border-blue-500/30">
+            <div className="flex items-start justify-between mb-3">
+              <div className="flex items-center space-x-2">
+                <Github className="w-5 h-5 text-white" />
+                <span className="font-semibold text-white">Open Source Project</span>
+              </div>
+              <button
+                onClick={() => setShowGitHubPrompt(false)}
+                className="text-white/80 hover:text-white transition-colors text-xl leading-none"
+              >
+                ×
+              </button>
+            </div>
+            <p className="text-white/90 text-sm mb-4">
+              VoiceFlow is open source! Help us improve by starring the repo, reporting issues, or contributing code.
+            </p>
+            <div className="flex space-x-2">
+              <a
+                href="https://github.com/yuis-ice/text-to-speech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded text-sm transition-colors"
+              >
+                <Star className="w-4 h-4" />
+                <span>Star</span>
+              </a>
+              <a
+                href="https://github.com/yuis-ice/text-to-speech/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1 bg-white/20 hover:bg-white/30 text-white px-3 py-1.5 rounded text-sm transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Issues</span>
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* Add Content Modal */}
         {showAddForm && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
@@ -417,6 +517,48 @@ function App() {
             </div>
           </div>
         )}
+
+        {/* Footer */}
+        <footer className="mt-12 border-t border-gray-700 pt-8 pb-6">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-4 text-sm text-gray-400">
+              <span>© 2024 VoiceFlow</span>
+              <span>•</span>
+              <span>Open Source MIT License</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://github.com/yuis-ice/text-to-speech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                <span>View Source</span>
+              </a>
+              <span className="text-gray-600">•</span>
+              <a
+                href="https://github.com/yuis-ice/text-to-speech/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>Feedback</span>
+              </a>
+              <span className="text-gray-600">•</span>
+              <a
+                href="https://github.com/sponsors/yuis-ice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-sm text-gray-400 hover:text-pink-400 transition-colors"
+              >
+                <Heart className="w-4 h-4" />
+                <span>Sponsor</span>
+              </a>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );

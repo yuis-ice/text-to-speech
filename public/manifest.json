@@ -1,0 +1,72 @@
+{
+  "name": "VoiceFlow - Text-to-Speech Application",
+  "short_name": "VoiceFlow",
+  "description": "Advanced text-to-speech web application with real-time word highlighting and customizable voice settings",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["utilities", "accessibility", "productivity"],
+  "screenshots": [
+    {
+      "src": "https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png",
+      "sizes": "1170x519",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "VoiceFlow main interface with text-to-speech controls"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "New Text",
+      "short_name": "Add Text",
+      "description": "Add a new text to convert to speech",
+      "url": "/?action=add",
+      "icons": [
+        {
+          "src": "/favicon-32x32.png",
+          "sizes": "32x32"
+        }
+      ]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+voiceflow",
+      "url": "/?text=%s"
+    }
+  ]
+}

@@ -2,15 +2,123 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VoiceFlow - Text to Speech</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>VoiceFlow - Advanced Text-to-Speech Web Application</title>
+    <meta name="title" content="VoiceFlow - Advanced Text-to-Speech Web Application" />
+    <meta name="description" content="Convert text to natural speech with real-time word highlighting, customizable voice settings, and content management. Built with React and Web Speech API for accessibility and learning." />
+    <meta name="keywords" content="text to speech, TTS, voice synthesis, accessibility, Web Speech API, React, TypeScript, voice assistant, audio conversion, reading assistant" />
+    <meta name="author" content="yuis-ice" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://text-speech.pages.dev/" />
+    <meta property="og:title" content="VoiceFlow - Advanced Text-to-Speech Web Application" />
+    <meta property="og:description" content="Convert text to natural speech with real-time word highlighting, customizable voice settings, and content management. Built with React and Web Speech API for accessibility and learning." />
+    <meta property="og:image" content="https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png" />
+    <meta property="og:image:width" content="1170" />
+    <meta property="og:image:height" content="519" />
+    <meta property="og:image:alt" content="VoiceFlow text-to-speech application interface with real-time word highlighting" />
+    <meta property="og:site_name" content="VoiceFlow" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://text-speech.pages.dev/" />
+    <meta property="twitter:title" content="VoiceFlow - Advanced Text-to-Speech Web Application" />
+    <meta property="twitter:description" content="Convert text to natural speech with real-time word highlighting, customizable voice settings, and content management. Built with React and Web Speech API for accessibility and learning." />
+    <meta property="twitter:image" content="https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png" />
+    <meta property="twitter:image:alt" content="VoiceFlow text-to-speech application interface with real-time word highlighting" />
+    <meta property="twitter:creator" content="@yuis_ice" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/favicon.svg" color="#3b82f6" />
+    <meta name="msapplication-TileColor" content="#1f2937" />
+    <meta name="theme-color" content="#1f2937" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://text-speech.pages.dev/" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "VoiceFlow",
+      "alternateName": "VoiceFlow Text-to-Speech",
+      "description": "Advanced text-to-speech web application with real-time word highlighting, customizable voice settings, and content management capabilities.",
+      "url": "https://text-speech.pages.dev/",
+      "image": "https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png",
+      "screenshot": "https://res.cloudinary.com/dxowqxqtj/image/upload/v1753415581/text-to-speech/voiceflow-main-screenshot.png",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web Browser",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "softwareVersion": "1.0.0",
+      "dateCreated": "2024-07-25",
+      "dateModified": "2024-07-25",
+      "author": {
+        "@type": "Person",
+        "name": "yuis-ice",
+        "url": "https://github.com/yuis-ice"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "yuis-ice",
+        "url": "https://github.com/yuis-ice"
+      },
+      "inLanguage": "en-US",
+      "isAccessibleForFree": true,
+      "license": "https://opensource.org/licenses/MIT",
+      "maintainer": {
+        "@type": "Person",
+        "name": "yuis-ice",
+        "url": "https://github.com/yuis-ice"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Text-to-Speech Conversion",
+        "Real-time Word Highlighting",
+        "Customizable Voice Settings",
+        "Content Management",
+        "Responsive Design",
+        "Accessibility Features"
+      ],
+      "keywords": "text to speech, TTS, voice synthesis, accessibility, Web Speech API, React, TypeScript",
+      "sameAs": [
+        "https://github.com/yuis-ice/text-to-speech"
+      ]
+    }
+    </script>
+    
+    <!-- Performance Hints -->
+    <link rel="preload" href="/src/main.tsx" as="script" />
+    
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   </head>
   <body>
     <div id="root"></div>
-
-    
-    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
